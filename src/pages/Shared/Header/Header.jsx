@@ -3,8 +3,8 @@ import logo from '../../../assets/logo.png';
 import moment from 'moment';
 const Header = () => {
     return (
-        <div>
-             <img src={logo} alt="" />
+        <div className='text-center'>
+             <img className='lg:ml-64' src={logo} alt="" />
              <p>Journalism Without Fear or Favour</p>
              <p className='text-xl'>{moment().format("dddd, MMMM D, YYYY, h:mm:ss a")}</p>
         </div>
