@@ -12,11 +12,11 @@ const Home = () => {
             <h2 className=' font-poppins'>this is home</h2>
 
             <div className='grid lg:grid-cols-4 gap-6'>
-       <div>
+       <div className='border'>
         <LeftSideNav></LeftSideNav>
        </div>
 
-       <div className='col-span-2'>
+       <div className='lg:col-span-2 border'>
         <h2>News Comming soon...</h2>
        </div>
 
