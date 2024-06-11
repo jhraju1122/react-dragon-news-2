@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 
  
 const Login = () => {
+        
+         const handleLogin = e =>{
+          e.preventDefault();
+          console.log(e.currentTarget);
+          const form = new FormDate(e.currentTarget);
+          console.log(form);
+         }
+
+
+
     return (
         <div>
             <Navbar></Navbar>
@@ -18,19 +29,20 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <Link className="btn btn-primary" to="/login">Login</Link>
+          
         </div>
       </form>
     </div>
