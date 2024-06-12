@@ -2,9 +2,30 @@ import React from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 
 const Register = () => {
-   
+        const handleRegister = e =>{
+          e.preventDefault();
+          console.log(e.currentTarget);
+          const form = new FormData(e.currentTarget);
+          const name = form.get('name');
+          const photo = form.get('photo');
+          const email = form.get('email');
+          const password = form.get('password');
+          console.log(email,name, photo, password);
+
+          // create user
+          createUser(email, password)
+          .then(result =>{
+            console.log(result.user)
+          })
+          .catch(error =>{
+            console.log(error) 
+          })
+        }
+
+
+
     return (
-       
+         
         <div>
              <Navbar></Navbar>
              
@@ -15,12 +36,16 @@ const Register = () => {
       <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body">
+      <form onClick={handleRegister} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
           <input type="text" placeholder="type your name here" className="input input-bordered" required />
+          <label className="label">
+            <span className="label-text">Photo</span>
+          </label>
+          <input type="text" placeholder="photo " name='photo' className="input input-bordered" required />
           <label className="label">
             <span className="label-text">Email</span>
           </label>
